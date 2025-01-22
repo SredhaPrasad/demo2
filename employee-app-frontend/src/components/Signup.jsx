@@ -22,7 +22,7 @@ const Signup = () => {
       return;
     }
     try {
-      const response = await axiosInstance.post('http://localhost:3000/users/adduser', form);
+      const response = await axiosInstance.post('/api/users/adduser', form);
       alert(response.data);
       setForm({ email: '', password: '', confirmPassword: '' }); // Reset form
       navigate('/'); // Navigate to login page

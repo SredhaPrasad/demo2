@@ -10,7 +10,7 @@ const Home = () => {
     const role = sessionStorage.getItem('role');
 
     useEffect(() => {
-        axiosInstance.get('http://localhost:3000/employees').then((res) => {
+        axiosInstance.get('/api/employees').then((res) => {
             setData(res.data);
         }).catch((err) => {
             console.log(err);
@@ -22,7 +22,7 @@ const Home = () => {
     }
 
     const delete_data = (id) => {
-        axiosInstance.delete(`http://localhost:3000/employees/deleteemployee/${id}`)
+        axiosInstance.delete(`/api/employees/deleteemployee/${id}`)
           .then(() => {
             setData(cardData.filter((item) => item._id !== id));
             alert('Employee deleted successfully');
