@@ -10,7 +10,7 @@ const Home = () => {
     const role = sessionStorage.getItem('role');
 
     useEffect(() => {
-        axiosInstance.get('/api/employees').then((res) => {
+        axiosInstance.get('/employees').then((res) => {
             setData(res.data);
         }).catch((err) => {
             console.log(err);

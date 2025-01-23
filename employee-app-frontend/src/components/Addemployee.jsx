@@ -24,7 +24,7 @@ const Addemployee = () => {
     if (location.state != null) {
       // Update Employee
       axiosInstance
-        .put(`/api/employees/updateemployee/${location.state.val._id}`, form)
+        .put(`/employees/updateemployee/${location.state.val._id}`, form)
         .then((res) => {
           alert(res.data);
           navigate('/employees'); // Redirect to employee list
@@ -36,7 +36,7 @@ const Addemployee = () => {
     } else {
       // Add Employee
       try {
-        const response = await axiosInstance.post('/api/employees/addemployee', form);
+        const response = await axiosInstance.post('/employees/addemployee', form);
         alert(response.data);
         setForm({ name: '', designation: '', salary: '', department: '', emplocation: '' }); // Reset form
         navigate('/employees'); // Redirect to employee list
